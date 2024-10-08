@@ -27,11 +27,13 @@
             border-bottom: 2px solid #C70039;
             text-align: center;
         }
- nav {
+
+        nav {
             display: flex;
             justify-content: space-between; /* Aligns items to corners */
             align-items: center;
         }
+
         .logo {
             display: flex;
             align-items: center;
@@ -65,13 +67,6 @@
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 700;
-        }
-
-
-        .logo-title {
-            font-size: 1.7rem;
-            font-weight: bold;
-            color: white;
         }
 
         /* SignIn Section Styles */
@@ -152,7 +147,7 @@
 </head>
 <body>
     <header>
-      <nav>
+        <nav>
             <div class="logo">
                 <img src="images/fitplate.jpg" alt="Logo">
                 <span class="logo-title">FitPlate</span>
@@ -162,15 +157,14 @@
                 <li><a href="#info">Info</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact-section">Contact</a></li>
-                <li><a href="/signin" class="signin">Sign In</a></li> <!-- Added Sign In button -->
+                <li><a href="signin.html" class="signin">Sign In</a></li>
             </ul>
         </nav>
     </header>
 
-
     <div class="signin-container">
         <h2>Sign In</h2>
-        <form action="home" method="POST">
+        <form id="signin-form">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
@@ -187,5 +181,13 @@
     <footer>
         <p>&copy; 2024 FitPlate. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('signin-form').onsubmit = function(e) {
+            e.preventDefault(); // Prevent the default form submission
+            // You can add validation here if needed
+            window.location.href = 'home'; // Redirect to home without .html
+        };
+    </script>
 </body>
 </html>
